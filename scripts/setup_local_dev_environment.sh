@@ -41,7 +41,7 @@ Note that Brew will be installed if you are running on macOs."
             brew install node
         else 
             # Upgrate Node
-            echo "Upgrate node"
+            echo "Upgrate node:"
             brew upgrade node
         fi
     else 
