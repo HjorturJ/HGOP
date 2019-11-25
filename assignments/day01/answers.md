@@ -1,7 +1,6 @@
 ### T-542-HGOP <img align="right" width="150" height="150" src="http://iva2011.ru.is/images/default_mono.png">
 
-**Instructors:** Guðlaugur Stefán Egilsson and  
-Hannes Pétursson
+**Instructors:** Guðlaugur Stefán Egilsson and Hannes Pétursson
 
 **Teaching assistants:** Fanney Sigurðardóttir, Hrafn Orri Hrafnkelsson and Kristinn Þorri Þrastarson
 
@@ -38,12 +37,19 @@ Hjörtur Jóhann Vignisson - hjorturv17@ru.is
 # References
 
 [What is Linux?](https://www.linux.com/what-is-linux/)
+
 [What is bash? - Link 1](https://searchdatacenter.techtarget.com/definition/bash-Bourne-Again-Shell)
+
 [What is bash? - Link 2](https://en.wikipedia.org/wiki/Bash_(Unix_shell))
+
 [What is a package manager?](https://en.wikipedia.org/wiki/Package_manager)
+
 [What is git? - Link 1 ](https://www.atlassian.com/git/tutorials/what-is-git)
+
 [What is git? - Link 2](https://en.wikipedia.org/wiki/Git)
+
 [What is npm?](https://nodejs.org/en/knowledge/getting-started/npm/what-is-npm/)
+
 [What is NodeJS?](https://www.tutorialspoint.com/nodejs/nodejs_introduction.htm)
 
 
