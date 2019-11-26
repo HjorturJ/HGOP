@@ -20,8 +20,7 @@ Developers use the containers to package up an application containing all the pa
 
 
 - **What is the difference between Virtual Machine, Docker Container and Docker Image**
-
-    Main difference between Virtual Machines and Docker Containers is that VMs have Hardware-level process isolation but Docker Containers use OS level process isolation. Each VM has a seperate OS but each container can share OS. VMs boot in minutes unlike Docker Containers that boots in seconds. Pre-built docker containers are easily available but VMs are difficult to find. Containers can be created in seconds but it takes relatively longer time to create a VM. VMs can move to a new host easily but containers are destroyed and re-created rather than moving.  Every Docker container is based on an Docker image. Docker Images are the underlying definition of what gets reconstituted into a running Docker container. To spin up a container, you must either download a public image or create your own.
+ Main difference between Virtual Machines and Docker Containers is that VMs have Hardware-level process isolation but Docker Containers use OS level process isolation. Each VM has a seperate OS but each container can share OS. VMs boot in minutes unlike Docker Containers that boots in seconds. Pre-built docker containers are easily available but VMs are difficult to find. Containers can be created in seconds but it takes relatively longer time to create a VM. VMs can move to a new host easily but containers are destroyed and re-created rather than moving.  Every Docker container is based on an Docker image. Docker Images are the underlying definition of what gets reconstituted into a running Docker container. To spin up a container, you must either download a public image or create your own.
 
 
 - **Web API?**
@@ -50,6 +49,7 @@ Docker is installed. The docker command works without sudo privileges.We have cr
 # Authors
 
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
+
 Hjörtur Jóhann Vignisson - hjorturv17@ru.is
 
 # References

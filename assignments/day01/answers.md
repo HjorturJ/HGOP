@@ -32,6 +32,7 @@ NodeJS is an open source, cross-platform runtime environment developing server-s
 # Authors
 
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
+
 Hjörtur Jóhann Vignisson - hjorturv17@ru.is
 
 # References
