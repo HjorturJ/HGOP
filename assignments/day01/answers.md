@@ -7,7 +7,7 @@
 ---
 # Answers - Day 1 :pencil2:
 
-This README contains our answers to the questions from the assignment scheduled for Day 1.
+This Markdown Document contains our answers to the questions from the assignment scheduled for Day 1.
 
 # Questions 
 
