@@ -40,10 +40,10 @@ module.exports = {
 
 function getClient() {
     return new Client({
-        host: "hgop-hj-gugg-container",
-        user: process.env.POSTGRES_USER,
-        password: process.env.POSTGRES_PASSWORD,
-        database: process.env.POSTGRES_DB
+        host: "my_postgres_container",
+        user: "my_postgres_user",
+        password: 'my_postgres_password',
+        database: "my_postgres_database"
     });
 }
 
