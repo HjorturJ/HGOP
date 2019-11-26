@@ -1,7 +1,7 @@
 # specifies the Parent Image from which we are building.
 FROM node:erbium
 
-# sets the working directory for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it 
+# sets the working directory to /code for any RUN, CMD, ENTRYPOINT, COPY and ADD instructions that follow it 
 WORKDIR /code
 
 # copies new files or directories from <src> to <dest> (in this case, from our local dir to the containers current workdir)
