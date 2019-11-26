@@ -76,6 +76,7 @@ echo -e "Dependency script completed on: $finished_datetime \nVersions:"
 if [[ $OSTYPE == darwin* ]]; then
     brew --version
 fi
+
 # Display installed version of git.
 git --version
 
