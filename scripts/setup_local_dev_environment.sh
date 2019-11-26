@@ -54,9 +54,13 @@ Note that Brew will be installed if you are running on macOs."
         #Install git.
         sudo apt-get install git
 
+        #Display that we are now starting to install curl.
         echo "Installing CURL:"
-        sudo apt-get install curl
 
+        #Installing CURL to download NodeJs
+        sudo apt-get install curl
+        
+        #Display that we are about to install NodeJs
         echo "Downloading and installing NodeJs:"
 
         #GET NodeJs setup.
@@ -64,6 +68,19 @@ Note that Brew will be installed if you are running on macOs."
 
         #Install NodeJs.
         sudo apt-get install -y nodejs
+
+        #Say that we are about to install pip3 and aws cli
+        echo "Downloading pip and then AWS CLI v1"
+
+        #Get pip install
+        curl -O https://bootstrap.pypa.io/get-pip.py
+
+        #Install pip
+        python3 get-pip.py --user
+
+        #Install AWC CLI with pip
+        pip3 install awscli --upgrade --user
+
     fi
 
 # Storing date time of script completion.
@@ -76,6 +93,7 @@ echo -e "Dependency script completed on: $finished_datetime \nVersions:"
 if [[ $OSTYPE == darwin* ]]; then
     brew --version
 fi
+
 # Display installed version of git.
 git --version
 
@@ -86,5 +104,6 @@ node --version
 echo -ne "NPM version "
 npm --version
 
+pip3 --version
 
-
+aws --version
