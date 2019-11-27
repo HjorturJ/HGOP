@@ -1,15 +1,8 @@
-Dependency script started on: Mon Nov 25 22:16:56 GMT 2019...
+Dependency script started on: Wed Nov 27 15:31:33 GMT 2019...
 Welcome gudrunivans! This script installs required programs/dependencies
 (Git and NodeJS) on your darwin18 machine! 
 Note that Brew will be installed if you are running on macOs.
 Updating homebrew:
-Already up-to-date.
 Upgrate git: 
-Upgrate node
-Dependency script completed on: Mon Nov 25 22:17:08 GMT 2019 
-Versions:
-Homebrew 2.1.16
-Homebrew/homebrew-core (git revision 992e; last commit 2019-11-25)
-git version 2.20.1 (Apple Git-117)
-NodeJs version v10.16.3
-NPM version 6.9.0
+Upgrate node:
+Downloading AWS CLI v1
