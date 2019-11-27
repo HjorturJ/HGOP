@@ -44,6 +44,18 @@ Note that Brew will be installed if you are running on macOs."
             echo "Upgrate node:"
             brew upgrade node
         fi
+
+        echo "Downloading AWS CLI v1"
+
+        # Install the AWS CLI version 1 without Sudo and pip 
+        curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+        unzip awscli-bundle.zip
+        ./awscli-bundle/install -b ~/bin/aws
+
+         # Terraform installed with brew 
+        echo "Installing Terraform"
+        brew install terraform
+
     else 
         #Display that we are now starting to install git.
         echo "Installing git:"
