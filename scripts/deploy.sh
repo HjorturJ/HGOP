@@ -1,12 +1,17 @@
 #!/bin/bash
 
-terraform destroy -auto-approve
+cd ..
 
-terraform init -auto-approve
+#terraform destroy -auto-approve
 
-terraform apply -auto-approve
+#terraform init
 
-ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./initialize_game_api_instance.sh"
+#terraform apply -auto-approve
+
+terraform output public_ip
+
+#ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./initialize_game_api_instance.sh"
+
+cd ./scripts
 
 curl $(terraform output public_ip):3000/status
-
