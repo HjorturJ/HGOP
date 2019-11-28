@@ -10,7 +10,7 @@
 This README contains information on Assignment 1 which was finished in week 1 in the course Introduction to quality management and testing.
 
 ## API instance 
-Below is a link to our API instace:
+Here is a link to our API instace:
 http://54.86.210.109:3000/status
 
 ## Project status 
