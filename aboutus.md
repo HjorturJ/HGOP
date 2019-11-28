@@ -33,8 +33,10 @@ I would like to understand the process of deployment more along with enhancing m
 **Name**  
 Hjörtur Jóhann Vignisson
 
+
 **Where you grew up**  
 Reykjavík
+
 
 **Education and employment history**
 Graduated from Menntaskólinn Hraðbraut 2012.
@@ -43,6 +45,8 @@ Graduated from Business Academy SouthWest 2016 with a degree in "Business & Desi
 
 I worked as an intern for RVX studios where I was an assistant 3D artist and reference gatherer.
 I also worked as a security guard from 2016 to 2018.
+
+
 **What kind of software person are you?**
 I prefer back-end programming but I dont mind front-end work either :smiley:
 
