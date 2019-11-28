@@ -16,16 +16,16 @@ http://54.86.210.109:3000/status
 ## Project status 
 
 ```bash
-├── item_repository
-│   ├── app.js
-│   ├── database.js
-│   ├── Dockerfile
-│   └── package.json
 ├── assignments
 │   ├── day01
 │   │   └── answers.md
 │   └── day02
 │       └── answers.md
+├── item_repository
+│   ├── app.js
+│   ├── database.js
+│   ├── Dockerfile
+│   └── package.json
 ├── scripts
 │   ├── deploy.sh
 │   ├── initialize_game_api_instance.sh
