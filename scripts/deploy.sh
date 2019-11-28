@@ -1,17 +1,13 @@
 #!/bin/bash
 
-cd ..
+# Destroy current instances if there are any
+terraform destroy -auto-approve
 
-#terraform destroy -auto-approve
+# Initialize again or for the first time if this is a case of first time deployment
+terraform init
 
-#terraform init
+# Apply without prompting the user for input
+terraform apply -auto-approve
 
-#terraform apply -auto-approve
-
-terraform output public_ip
-
-#ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./initialize_game_api_instance.sh"
-
-cd ./scripts
-
-curl $(terraform output public_ip):3000/status
+#Log into the cloud via ssh and run the initialize script on the virtual machine (which installs and runs docker-compose)
+ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./initialize_game_api_instance.sh"
