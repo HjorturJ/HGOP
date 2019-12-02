@@ -159,7 +159,7 @@ test('getCard should give us undefined at the start of the game and then give us
 
   // Assert 
   expect(card).toEqual(undefined);
-  game.guess21OrUnder(game);
+  game.guessOver21(game);
   card = game.getCard(game);
   expect(card).toEqual('08S');
 });
