@@ -166,7 +166,7 @@ test('getCard should give us undefined at the start of the game and then give us
 
 test('isGameOver should give us true if we keep guessing 21 or under', () => {
 
-  // Arange
+  // Arrange
   let deck = deckConstructor();
   deck = [
     '05C', '08D', '08S', '10H'
@@ -189,7 +189,7 @@ test('isGameOver should give us true if we keep guessing 21 or under', () => {
 
 test('isGameOver should give us true if we guess over 21', () => {
 
-  // Arange
+  // Arrange
   let deck = deckConstructor();
   deck = [
     '10C', '10D', '08S', '10H'
@@ -208,4 +208,58 @@ test('isGameOver should give us true if we guess over 21', () => {
   game.guessOver21(game);
   isOver = game.isGameOver(game);
   expect(isOver).toEqual(true);
+});
+
+test('playerHasWon should give us false first, and then true after guessing 21 or under once', () => {
+
+  // Arrange
+  let deck = deckConstructor();
+  deck = [
+    '05C', '10D', '06S', '10H'
+  ];
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let isOver = game.isGameOver(game);
+  let hasWon = game.playerWon(game);
+
+  // Assert
+  expect(hasWon).toEqual(false);
+  expect(isOver).toEqual(false);
+  game.guess21OrUnder(game);
+  isOver = game.isGameOver(game);
+  hasWon = game.playerWon(game);
+  expect(isOver).toEqual(true);
+  expect(hasWon).toEqual(true);
+});
+
+test('playerHasWon should give us false first, and then false again after guessing over 21, but the game should still be over', () => {
+
+  // Arrange
+  let deck = deckConstructor();
+  deck = [
+    '10C', '02D', '06S', '10H'
+  ];
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let isOver = game.isGameOver(game);
+  let hasWon = game.playerWon(game);
+
+  // Assert
+  expect(hasWon).toEqual(false);
+  expect(isOver).toEqual(false);
+  game.guessOver21(game);
+  isOver = game.isGameOver(game);
+  hasWon = game.playerWon(game);
+  expect(isOver).toEqual(true);
+  expect(hasWon).toEqual(false);
 });
