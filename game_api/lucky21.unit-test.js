@@ -30,7 +30,7 @@ test('guess21OrUnder should draw the next card', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H', 
+      '05C', '01D', '09S', '10H'
   ];
 
   let dealer = dealerConstructor();
@@ -48,12 +48,35 @@ test('guess21OrUnder should draw the next card', () => {
   expect(game.state.cards[2]).toEqual('01D');
 });
 
-test('getCardValue should be undefined at the start of the game, and 9 after the first draw', () => {
 
+test('getCardsValue should give us 15 total at the start of the game, and 19 after one draw', () => {
+  // Arrange
+  let deck = deckConstructor();
+  deck = [
+    '07C', '08D', '04S', '10H'
+  ];
+  
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let totalCardValue = game.getCardsValue(game);
+
+  // Assert
+  expect(totalCardValue).toEqual(15);
+  // game.guess21OrUnder(game);
+  // Debateable if guess21OrUnder puts new card into the cards array right away (Probably though)
+  // totalCardValue = game.getCardsValue(game);
+  // expect(totalCardValue).toEqual(19);
+});
+
+test('getCardValue should be undefined at the start of the game, and 9 after the first draw', () => {
   // Arrange 
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H', 
+      '05C', '01D', '09S', '10H'
   ];
 
   let dealer = dealerConstructor();
@@ -68,7 +91,6 @@ test('getCardValue should be undefined at the start of the game, and 9 after the
 
   // Assert
   expect(cardValue).toEqual(undefined);
-  
   //game.guess21OrUnder(game);
   //cardValue = game.getCardValue(game);
   //expect(cardValue).toEqual(9);
