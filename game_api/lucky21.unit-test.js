@@ -124,7 +124,7 @@ test('getTotal should give us 13 total at the start of the game, and 20 in total
   let deck = deckConstructor();
   deck = [
     '05C', '08D', '08S', '10H'
-  ]
+  ];
 
   let dealer = dealerConstructor();
   // Override the shuffle to do nothing.
@@ -147,7 +147,7 @@ test('getCard should give us undefined at the start of the game and then give us
   let deck = deckConstructor();
   deck = [
     '05C', '08D', '08S', '10H'
-  ]
+  ];
 
   let dealer = dealerConstructor();
   // Override the shuffle to do nothing.
@@ -162,4 +162,50 @@ test('getCard should give us undefined at the start of the game and then give us
   game.guess21OrUnder(game);
   card = game.getCard(game);
   expect(card).toEqual('08S');
+});
+
+test('isGameOver should give us true if we keep guessing 21 or under', () => {
+
+  // Arange
+  let deck = deckConstructor();
+  deck = [
+    '05C', '08D', '08S', '10H'
+  ];
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let isOver = game.isGameOver(game);
+
+  // Assert
+  expect(isOver).toEqual(false); 
+  game.guess21OrUnder(game);
+  isOver = game.isGameOver(game);
+  expect(isOver).toEqual(true);
+});
+
+test('isGameOver should give us true if we guess over 21', () => {
+
+  // Arange
+  let deck = deckConstructor();
+  deck = [
+    '10C', '10D', '08S', '10H'
+  ];
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let isOver = game.isGameOver(game);
+
+  // Assert
+  expect(isOver).toEqual(false); 
+  game.guessOver21(game);
+  isOver = game.isGameOver(game);
+  expect(isOver).toEqual(true);
 });
