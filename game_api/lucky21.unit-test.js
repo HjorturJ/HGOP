@@ -33,22 +33,21 @@ test('guess21OrUnder should draw the next card', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H'
+    '10H', '09S', '01D', '05C'
   ];
 
   let dealer = dealerConstructor();
   // Override the shuffle to do nothing.
   dealer.shuffle = (deck) => {};
   
+  // Act
   // Inject our dependencies.
   let game = lucky21Constructor(deck, dealer);
-
-  // Act
   game.guess21OrUnder(game);
   
   // Assert
   expect(game.state.cards.length).toEqual(3);
-  expect(game.state.cards[2]).toEqual('01D');
+  expect(game.state.cards[2]).toEqual('09S');
 });
 
 // Card draw test 
@@ -56,7 +55,7 @@ test('guessOver21 should draw the next card into our designated card slot', () =
   // Arrange
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H'
+    '10H', '09S', '01D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -78,7 +77,7 @@ test('getCardsValue should give us 15 total at the start of the game', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '13C', '05D', '04S', '10H'
+    '10H', '04S', '05D', '13C'
   ];
   
   let dealer = dealerConstructor();
@@ -99,7 +98,7 @@ test('getCardsValue should give us 19 after one draw', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '13C', '05D', '04S', '10H'
+    '10H', '04S', '05D', '13C'
   ];
   
   let dealer = dealerConstructor();
@@ -121,7 +120,7 @@ test('getCards should give us an array of strings with the length 2', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '07C', '08D', '04S', '10H'
+    '10H', '04S', '08D', '07C'
   ];
   
   let dealer = dealerConstructor();
@@ -143,7 +142,7 @@ test('getCards should return an array of string with length 3 after drawing once
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '07C', '08D', '04S', '10H'
+    '10H', '04S', '08D', '07C'
   ];
   
   let dealer = dealerConstructor();
@@ -166,7 +165,7 @@ test('getCardValue should be undefined at the start of the game', () => {
   // Arrange 
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H'
+    '10H', '09S', '01D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -178,7 +177,6 @@ test('getCardValue should be undefined at the start of the game', () => {
   let game = lucky21Constructor(deck, dealer);
   let cardValue = game.getCardValue(game);
 
-
   // Assert
   expect(cardValue).toEqual(undefined);
 });
@@ -188,7 +186,7 @@ test('getCardValue should be 9 after the first guess being over 21', () => {
   // Arrange 
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H'
+    '10H', '09S', '01D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -211,7 +209,7 @@ test('getTotal should give us 13 total at the start of the game', () => {
   // Arrange 
   let deck = deckConstructor();
   deck = [
-    '05C', '08D', '08S', '10H'
+    '10H', '08S', '08D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -233,7 +231,7 @@ test('getTotal should give us 20 in total after the first draw', () => {
   // Arrange 
   let deck = deckConstructor();
   deck = [
-    '05C', '08D', '08S', '10H'
+    '10H', '08S', '08D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -256,7 +254,7 @@ test('getCard should give us undefined at the start of the game', () => {
   // Arrange 
   let deck = deckConstructor();
   deck = [
-    '05C', '08D', '08S', '10H'
+    '10H', '08S', '08D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -278,7 +276,7 @@ test('getCard should give us the string 08S after guessing over 21 in the first 
   // Arrange 
   let deck = deckConstructor();
   deck = [
-    '05C', '08D', '08S', '10H'
+    '10H', '08S', '08D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -301,7 +299,7 @@ test('isGameOver should give us false at the start of the game', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '05C', '08D', '08S', '10H'
+    '10H', '08S', '08D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -323,7 +321,7 @@ test('isGameOver should give us true if we keep guessing 21 or under', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '05C', '08D', '08S', '10H'
+    '10H', '08S', '08D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -346,7 +344,7 @@ test('isGameOver should give us true if we guess over 21', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '10C', '10D', '08S', '10H'
+    '10H', '08S', '10D', '10C'
   ];
 
   let dealer = dealerConstructor();
@@ -369,7 +367,7 @@ test('playerHasWon should give us false first', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '05C', '10D', '06S', '10H'
+    '10H', '06S', '10D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -391,7 +389,7 @@ test('playerHasWon should give us true after guessing 21 or under once', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '05C', '10D', '06S', '10H'
+    '10H', '06S', '10D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -414,7 +412,7 @@ test('playerHasWon should give us false even after guessing 21 or under once and
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '05C', '10D', '02S', '10H'
+    '10H', '02S', '10D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -438,7 +436,7 @@ test('playerHasWon should give us true even after guessing 21 or under once and 
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '05C', '10D', '06S', '10H'
+    '10H', '06S', '10D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -462,7 +460,7 @@ test('guessOver21 should draw the next card, game ends, player didnt win', () =>
   // Arrange
   let deck = deckConstructor();
   deck = [
-      '05C', '01D', '09S', '10H'
+      '10H', '09S', '01D', '05C'
   ];
 
   let dealer = dealerConstructor();

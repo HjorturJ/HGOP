@@ -42,15 +42,15 @@ module.exports = (deck, dealer) => {
         },
         // The player's card (string or undefined).
         getCard: (game) => {
-            // TODO
+            return game.state.card;
         },
         // Player action (void).
         guess21OrUnder: (game) => {
-            // TODO
+            game.state.cards.push(game.state.dealer.draw(game.state.deck));
         },
         // Player action (void).
         guessOver21: (game) => {
-            // TODO
-        },
+            game.state.card = game.state.dealer.draw(game.state.deck); 
+        }
     };
 };
