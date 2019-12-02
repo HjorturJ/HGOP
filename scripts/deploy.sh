@@ -3,9 +3,6 @@
 # Destroy current instances if there are any
 terraform destroy -auto-approve
 
-# Initialize again or for the first time if this is a case of first time deployment
-terraform init
-
 # Apply without prompting the user for input
 terraform apply -auto-approve
 
