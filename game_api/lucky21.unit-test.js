@@ -72,6 +72,29 @@ test('getCardsValue should give us 15 total at the start of the game, and 19 aft
   // expect(totalCardValue).toEqual(19);
 });
 
+test('getCards should give us an array of strings with the length 2 and then 3 after the first draw/guess', () => {
+  // Arrange
+  let deck = deckConstructor();
+  deck = [
+    '07C', '08D', '04S', '10H'
+  ];
+  
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let cardsArray = game.getCards(game);
+
+  // Assert
+  expect(cardsArray.length).toEqual(2);
+  game.guess21OrUnder(game);
+  cardsArray = game.getCards(game);
+  expect(cardsArray.length).toEqual(3);
+  expect(cardsArray[2]).toEqual('04S');
+});
+
 test('getCardValue should be undefined at the start of the game, and 9 after the first draw', () => {
   // Arrange 
   let deck = deckConstructor();
