@@ -118,3 +118,26 @@ test('getTotal should give us 13 total at the start of the game, and 20 in total
   totalValue = game.getTotal(game);
   expect(totalValue).toEqual(20);
 });
+
+test('getCard should give us undefined at the start of the game and then give us the string 08S', () => {
+
+  // Arrange 
+  let deck = deckConstructor();
+  deck = [
+    '05C', '08D', '08S', '10H'
+  ]
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let card = game.getCard(game);
+
+  // Assert 
+  expect(card).toEqual(undefined);
+  game.guess21OrUnder(game);
+  card = game.getCard(game);
+  expect(card).toEqual('08S');
+});
