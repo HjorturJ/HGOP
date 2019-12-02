@@ -1,9 +1,5 @@
-const deckConstructor = require('./deck.js');
-const dealerConstructor = require('./dealer.js');
-
-module.exports = () => {
-    let deck = deckConstructor();
-    let dealer = dealerConstructor();
+// We are exporitng game which has set deck and dealer (injected)
+module.exports = (deck, dealer) => {
     dealer.shuffle(deck);
     let card0 = dealer.draw(deck);
     let card1 = dealer.draw(deck);
