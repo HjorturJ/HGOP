@@ -118,3 +118,26 @@ test('getCardValue should be undefined at the start of the game, and 9 after the
   //cardValue = game.getCardValue(game);
   //expect(cardValue).toEqual(9);
 });
+
+test('getTotal should give us 13 total at the start of the game, and 20 in total after the first draw', () => {
+
+  // Arrange 
+  let deck = deckConstructor();
+  deck = [
+    '05C', '08D', '08S', '10H'
+  ]
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+
+  // Act
+  let game = lucky21Constructor(deck, dealer);
+  let totalValue = game.getTotal(game);
+
+  // Assert 
+  expect(totalValue).toEqual(13);
+  game.guess21OrUnder(game);
+  totalValue = game.getTotal(game);
+  expect(totalValue).toEqual(20);
+});
