@@ -62,11 +62,10 @@ test('guessOver21 should draw the next card into our designated card slot', () =
   // Override the shuffle to do nothing.
   dealer.shuffle = (deck) => {};
   
+  // Act
   // Inject our dependencies
   let game = lucky21Constructor(deck, dealer);
-
-  // Act
-  game.guess21OrUnder(game);
+  game.guessOver21(game);
   
   // Assert
   expect(game.state.card).toEqual('09S');
