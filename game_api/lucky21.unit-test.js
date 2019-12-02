@@ -66,10 +66,9 @@ test('getCardsValue should give us 15 total at the start of the game, and 19 aft
 
   // Assert
   expect(totalCardValue).toEqual(15);
-  // game.guess21OrUnder(game);
-  // Debateable if guess21OrUnder puts new card into the cards array right away (Probably though)
-  // totalCardValue = game.getCardsValue(game);
-  // expect(totalCardValue).toEqual(19);
+  game.guess21OrUnder(game);
+  totalCardValue = game.getCardsValue(game);
+  expect(totalCardValue).toEqual(19);
 });
 
 test('getCards should give us an array of strings with the length 2 and then 3 after the first draw/guess', () => {
@@ -114,7 +113,7 @@ test('getCardValue should be undefined at the start of the game, and 9 after the
 
   // Assert
   expect(cardValue).toEqual(undefined);
-  //game.guess21OrUnder(game);
+  //game.guessOver21(game);
   //cardValue = game.getCardValue(game);
   //expect(cardValue).toEqual(9);
 });
