@@ -47,6 +47,10 @@ module.exports = (deck, dealer) => {
         // Player action (void).
         guess21OrUnder: (game) => {
             // TODO
+            game.state.card = game.state.dealer.draw(game.state.deck);
+            // Check for win maybe?
+            game.state.cards.push(game.state.card);
+            // Reread rules and check if we gotta do someting here
         },
         // Player action (void).
         guessOver21: (game) => {
