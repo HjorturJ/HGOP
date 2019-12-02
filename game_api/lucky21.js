@@ -53,15 +53,43 @@ module.exports = (deck, dealer) => {
         },
         // The value of the card that should exceed 21 if it exists (integer or undefined).
         getCardValue: (game) => {
-            // TODO
+            if(game.state.card == undefined) {
+                return undefined;
+            }
+            else {
+                let newNumber = parseInt(element);
+                
+                // This is not an ace
+                if(newNumber != 1) {
+                    if(newNumber > 10) {
+                        newNumber = 10;
+                    }
+                }
+                else {
+                    // Set the ace to be an 11, if that goes over 21, we want it to be 1
+                    newNumber = 11;
+                    if((getCardsValue() + newNumber) > 21) {
+                        newNumber = 1;
+                    }
+                }
+
+                return newNumber;
+            }
         },
         // The cards value + the card value if it exits (integer).
         getTotal: (game) => {
-            // TODO
+            let cardsValue = getCardsValue();
+            let cardValue = getCardValue();
+
+            if(cardValue != undefined) {
+                return cardsValue + cardValue;
+            }
+            
+            return cardsValue;
         },
         // The player's cards (array of strings).
         getCards: (game) => {
-            // TODO
+            return game.state.cards;
         },
         // The player's card (string or undefined).
         getCard: (game) => {
