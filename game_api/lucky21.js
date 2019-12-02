@@ -26,7 +26,30 @@ module.exports = (deck, dealer) => {
         },
         // The highest score the cards can yield without going over 21 (integer).
         getCardsValue: (game) => {
-            // TODO
+            let total = 0;
+            game.state.cards.forEach(element => {
+                let newNumber = parseInt(element);
+                
+                // This is not an ace
+                if(newNumber != 1) {
+                    if(newNumber > 10) {
+                        newNumber = 10;
+                    }
+                }
+                else {
+                    // Set the ace to be an 11, if that goes over 21, we want it to be 1
+                    newNumber = 11;
+                    if((total + newNumber) > 21) {
+                        newNumber = 1;
+                    }
+                }
+
+                // Add the number to the total
+                console.log(newNumber);
+                total += newNumber;
+            });
+
+            return total;
         },
         // The value of the card that should exceed 21 if it exists (integer or undefined).
         getCardValue: (game) => {
