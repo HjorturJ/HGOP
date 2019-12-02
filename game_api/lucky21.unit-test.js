@@ -48,12 +48,34 @@ test('guess21OrUnder should draw the next card', () => {
   expect(game.state.cards[2]).toEqual('01D');
 });
 
+test('guessOver21 should draw the next card into our designated card slot, game ends, player didnt win', () => {
+  // Arrange
+  let deck = deckConstructor();
+  deck = [
+      '05C', '01D', '09S', '10H'
+  ];
+
+  let dealer = dealerConstructor();
+  // Override the shuffle to do nothing.
+  dealer.shuffle = (deck) => {};
+  
+  // Inject our dependencies
+  let game = lucky21Constructor(deck, dealer);
+
+  // Act
+  game.guess21OrUnder(game);
+  
+  // Assert
+  expect(game.state.card).toEqual('09S');
+  expect(game.isGameOver(game)).toEqual(true);
+  expect(game.playerWon(game)).toEqual(false);
+});
 
 test('getCardsValue should give us 15 total at the start of the game, and 19 after one draw', () => {
   // Arrange
   let deck = deckConstructor();
   deck = [
-    '07C', '08D', '04S', '10H'
+    '13C', '05D', '04S', '10H'
   ];
   
   let dealer = dealerConstructor();
