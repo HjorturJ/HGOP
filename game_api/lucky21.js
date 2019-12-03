@@ -45,7 +45,6 @@ module.exports = (deck, dealer) => {
                 }
 
                 // Add the number to the total
-                console.log(newNumber);
                 total += newNumber;
             });
 
@@ -57,7 +56,7 @@ module.exports = (deck, dealer) => {
                 return undefined;
             }
             else {
-                let newNumber = parseInt(element);
+                let newNumber = parseInt(game.state.card);
                 
                 // This is not an ace
                 if(newNumber != 1) {
@@ -68,7 +67,7 @@ module.exports = (deck, dealer) => {
                 else {
                     // Set the ace to be an 11, if that goes over 21, we want it to be 1
                     newNumber = 11;
-                    if((getCardsValue() + newNumber) > 21) {
+                    if((game.getCardsValue() + newNumber) > 21) {
                         newNumber = 1;
                     }
                 }
@@ -78,8 +77,8 @@ module.exports = (deck, dealer) => {
         },
         // The cards value + the card value if it exits (integer).
         getTotal: (game) => {
-            let cardsValue = getCardsValue();
-            let cardValue = getCardValue();
+            let cardsValue = game.getCardsValue(game);
+            let cardValue = game.getCardValue(game);
 
             if(cardValue != undefined) {
                 return cardsValue + cardValue;

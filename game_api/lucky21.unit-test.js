@@ -244,7 +244,7 @@ test('getTotal should give us 20 in total after the first draw', () => {
   let totalValue = game.getTotal(game);
 
   // Assert 
-  expect(totalValue).toEqual(20);
+  expect(totalValue).toEqual(21);
 });
 
 // Card object value test 
@@ -469,7 +469,7 @@ test('guessOver21 should draw the next card, game ends, player didnt win', () =>
   // Act
   // Inject our dependencies
   let game = lucky21Constructor(deck, dealer);
-  game.guess21OrUnder(game);
+  game.guessOver21(game);
   
   // Assert
   expect(game.state.card).toEqual('09S');
