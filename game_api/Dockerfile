@@ -8,7 +8,8 @@ WORKDIR /code
 COPY package.json package.json
 
 # runs this command in the current workdir (npm install installs the dependencies listed in package.json)
-RUN npm install
+# Except the dev dependencies due to the production flag
+RUN npm install --production
 
 # copies database.js into our containers /code workdir
 COPY database.js database.js
