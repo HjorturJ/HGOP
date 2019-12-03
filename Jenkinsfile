@@ -13,14 +13,14 @@ node {
 
     stage("Setup") {
         // Change current directory
-        dir(game_api) {
+        dir("game_api") {
             sh "npm install"
         }
     }
 
     stage("Lint") {
         // Change current directory
-        dir(game_api) {
+        dir("game_api") {
             sh "npm run eslint"
         }
     }
