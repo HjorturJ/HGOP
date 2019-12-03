@@ -59,6 +59,20 @@ resource "aws_instance" "game_server" {
     }
   }
 
+  # Copying docker compose up script into our server through ssh
+  # so it can be used there
+  provisioner "file" {
+    source      = "scripts/docker_compose_up.sh"
+    destination = "/home/ubuntu/docker_compose_up.sh"
+
+    connection {
+      host        = coalesce(self.public_ip, self.private_ip)
+      type        = "ssh"
+      user        = "ubuntu"
+      private_key = file("~/.aws/GameKeyPair.pem")
+    }
+  }
+
   # Copying docker-compose into our server through ssh
   # so it can be used there
   provisioner "file" {
