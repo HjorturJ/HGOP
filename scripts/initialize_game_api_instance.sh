@@ -28,7 +28,3 @@ if [ ! -f ./docker-compose.yml ]; then
     echo "docker-compose.yml file is not present"
     exit 1
 fi
-
-#Remove later, maybe above if check too
-#echo 'Starting the API'
-#sudo docker-compose up -d
