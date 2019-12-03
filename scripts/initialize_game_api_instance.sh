@@ -24,11 +24,11 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.24.1/docker-
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Check if docker-compose.yml file is present or not
-if [ ! -f ./docker-compose.yml ]; then
-    echo "docker-compose.yml file is not present"
-    exit 1
-fi
+#if [ ! -f ./docker-compose.yml ]; then
+#    echo "docker-compose.yml file is not present"
+#    exit 1
+#fi
 
 #Remove later, maybe above if check too
-echo 'Starting the API'
-sudo docker-compose up -d
+#echo 'Starting the API'
+#sudo docker-compose up -d
