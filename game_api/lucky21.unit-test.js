@@ -459,7 +459,7 @@ test('guessOver21 should draw the next card, game ends, player didnt win', () =>
   // Arrange
   let deck = deckConstructor();
   deck = [
-      '10H', '09S', '01D', '05C'
+      '10H', '03S', '01D', '05C'
   ];
 
   let dealer = dealerConstructor();
@@ -472,7 +472,8 @@ test('guessOver21 should draw the next card, game ends, player didnt win', () =>
   game.guessOver21(game);
   
   // Assert
-  expect(game.state.card).toEqual('09S');
+  expect(game.state.card).toEqual('03S');
   expect(game.isGameOver(game)).toEqual(true);
+  expect(game.getTotal(game)).toEqual(19);
   expect(game.playerWon(game)).toEqual(false);
 });
