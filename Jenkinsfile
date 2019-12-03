@@ -20,6 +20,13 @@ node {
         }
     }
 
+    stage("Test") {
+        // Change current directory
+        dir("game_api") {
+            sh "npm run test:unit"
+        }
+    }
+
     stage("Build") {
         sh "./scripts/docker_build.sh ${git.GIT_COMMIT}"
         sh "./scripts/docker_push.sh ${git.GIT_COMMIT}"
