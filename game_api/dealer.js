@@ -1,4 +1,4 @@
-module.exports = () => {
+module.exports = (context) => {
     return {
         shuffle: (deck, random) => {
             for (let i = 0; i < deck.length - 1; i++) {
