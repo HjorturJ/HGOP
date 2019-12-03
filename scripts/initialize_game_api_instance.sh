@@ -1,11 +1,13 @@
 #!/bin/bash
 
+export DEBIAN_FRONTEND=noninteractive
+
 echo 'This script installs everything needed to run our API on the instance'
 echo 'and then starts the API.'
 
 echo 'Installing Docker'
-sudo apt-get update -y
-sudo apt-get install -y \
+sudo apt-get update -y libpq-dev
+sudo apt-get install -y libpq-dev \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -16,8 +18,8 @@ sudo add-apt-repository \
     "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
     $(lsb_release -cs) \
     stable"
-sudo apt-get update -y
-sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+sudo apt-get update -y libpq-dev
+sudo apt-get install -y libpq-dev docker-ce docker-ce-cli containerd.io
 sudo usermod -aG docker ubuntu
 
 echo 'Install Docker Compose'
