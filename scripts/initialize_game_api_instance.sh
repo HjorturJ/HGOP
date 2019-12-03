@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export DEBIAN_FRONTEND=noninteractive
+#export DEBIAN_FRONTEND=noninteractive
 
 echo 'This script installs everything needed to run our API on the instance'
 echo 'and then starts the API.'
