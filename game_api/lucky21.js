@@ -51,9 +51,9 @@ module.exports = (deck, dealer) => {
         // The highest score the cards can yield without going over 21 (integer).
         getCardsValue: (game) => {
             let total = 0;
-            game.state.cards.forEach(element => {
+            game.state.cards.forEach((element) => {
                 let newNumber = parseInt(element);
-                
+
                 // This is not an ace
                 if(newNumber != 1) {
                     if(newNumber > 10) {
@@ -81,7 +81,7 @@ module.exports = (deck, dealer) => {
             }
             else {
                 let newNumber = parseInt(game.state.card);
-                
+
                 // This is not an ace
                 if(newNumber != 1) {
                     if(newNumber > 10) {
@@ -107,7 +107,7 @@ module.exports = (deck, dealer) => {
             if(cardValue != undefined) {
                 return cardsValue + cardValue;
             }
-            
+
             return cardsValue;
         },
         // The player's cards (array of strings).
@@ -124,7 +124,7 @@ module.exports = (deck, dealer) => {
         },
         // Player action (void).
         guessOver21: (game) => {
-            game.state.card = game.state.dealer.draw(game.state.deck); 
+            game.state.card = game.state.dealer.draw(game.state.deck);
         }
     };
 };

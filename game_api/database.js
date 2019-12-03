@@ -24,23 +24,23 @@ module.exports = {
                 rowMode: 'array'
             };
             client.query(query, (err, res) => {
-                onGet(res.rows.map(row => {
+                onGet(res.rows.map((row) => {
                     return {
                         id: row[0],
                         name: row[1],
                         insertdate: row[2]
-                    }
+                    };
                 }));
                 client.end();
             });
         });
         return;
     }
-}
+};
 
 function getClient() {
     return new Client({
-        host: "my_postgres_container",
+        host: 'my_postgres_container',
         user: process.env.POSTGRES_USER,
         password: process.env.POSTGRES_PASSWORD,
         database: process.env.POSTGRES_DB
