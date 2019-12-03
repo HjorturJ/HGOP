@@ -12,7 +12,7 @@ app.get('/status', (req, res) => {
 app.get('/items', (req, res) => {
     database.getItems(function(items) {
         // Order items alphabetically
-        var names = items.map(x => x.name);
+        let names = items.map((x) => x.name);
         names.sort();
         names = names.slice(0, 10);
         res.statusCode = 200;
@@ -22,12 +22,12 @@ app.get('/items', (req, res) => {
 
 // api call to /items/name which inserts an item to database.
 app.post('/items/:name', (req, res) => {
-    var name = req.params.name;
+    let name = req.params.name;
     database.insertItem(name, new Date(), function() {
-        var msg = 'item inserted successfully';
+        let msg = 'item inserted successfully';
         res.statusCode = 201;
         res.send(msg);
     });
-})
+});
 
 app.listen(3000);

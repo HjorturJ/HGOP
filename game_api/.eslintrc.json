@@ -22,6 +22,8 @@
         "react"
     ],
     "rules": {
-        "indent": [2,4]
+        "indent": [2, 4],
+        "eol-last": ["error", "never"],
+        "prefer-const": 0
     }
 }

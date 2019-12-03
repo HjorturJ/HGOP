@@ -6,11 +6,6 @@ node {
         sh "git stash"
     }
 
-    stage("Build") {
-        sh "./scripts/docker_build.sh ${git.GIT_COMMIT}"
-        sh "./scripts/docker_push.sh ${git.GIT_COMMIT}"
-    }
-
     stage("Setup") {
         // Change current directory
         dir("game_api") {
@@ -23,5 +18,10 @@ node {
         dir("game_api") {
             sh "npm run eslint"
         }
+    }
+
+    stage("Build") {
+        sh "./scripts/docker_build.sh ${git.GIT_COMMIT}"
+        sh "./scripts/docker_push.sh ${git.GIT_COMMIT}"
     }
 }
