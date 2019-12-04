@@ -1,6 +1,6 @@
-const express = require("express");
-const database = require("./database.js");
-const lucky21 = require("./lucky21.js");
+const express = require('express');
+const database = require('./database.js');
+const lucky21 = require('./lucky21.js');
 const { Client } = require('pg');
 const deck = require('./deck.js');
 const dealer = require('./dealer.js');
