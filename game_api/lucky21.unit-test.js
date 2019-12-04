@@ -1,18 +1,14 @@
 const deckConstructor = require('./deck.js');
 const dealerConstructor = require('./dealer.js');
 const lucky21Constructor = require('./lucky21.js');
+const randomConstructor = require('./random');
 
 // TODO: Add port from config.js to docker-compose
 
 // Initial state test.
 test('a new game should have 50 cards left in the deck', () => {
     // Arrange
-    
     const context = require('./context.js').newContext();
-
-    //let deckConstructor = context('deck');
-    //let dealerConstructor = context('dealer');
-    //let lucky21Constructor = context('lucky21');
 
     // Act
     let game = context('lucky21')(context);
@@ -20,19 +16,14 @@ test('a new game should have 50 cards left in the deck', () => {
     // Assert
     expect(game.state.deck.length).toEqual(50);
 });
-/*
+
 // Initial state test.
 test('a new game should have 2 drawn cards', () => {
     // Arrange
-    //let deckConstructor = context('deck');
-    //let dealerConstructor = context('dealer');
-    //let lucky21Constructor = context('lucky21');
-
-    let deck = deckConstructor();
-    let dealer = dealerConstructor();
+    const context = require('./context.js').newContext();
 
     // Act
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')(context);
 
     // Assert
     expect(game.state.cards.length).toEqual(2);
@@ -41,25 +32,29 @@ test('a new game should have 2 drawn cards', () => {
 // Card draw test.
 test('guess21OrUnder should draw the next card', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+
+    let deck = [
         '10H', '09S', '01D', '05C'
     ];
 
-    let dealer = dealerConstructor();
-    // Override the shuffle to do nothing.
+    let dealer = dealerConstructor(context);
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
-    // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guess21OrUnder(game);
 
     // Assert
     expect(game.state.cards.length).toEqual(3);
     expect(game.state.cards[2]).toEqual('09S');
 });
-
+/*
 // Card draw test
 test('guessOver21 should draw the next card into our designated card slot', () => {
     // Arrange
