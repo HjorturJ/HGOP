@@ -6,20 +6,20 @@ const lucky21Constructor = require('./lucky21.js');
 // Initial state test.
 test('a new game should have 50 cards left in the deck', () => {
     // Arrange
+    
+    const context = require('./context.js').newContext();
+
     //let deckConstructor = context('deck');
     //let dealerConstructor = context('dealer');
     //let lucky21Constructor = context('lucky21');
-    
-    let deck = deckConstructor();
-    let dealer = dealerConstructor();
 
     // Act
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')(context);
 
     // Assert
     expect(game.state.deck.length).toEqual(50);
 });
-
+/*
 // Initial state test.
 test('a new game should have 2 drawn cards', () => {
     // Arrange
@@ -475,4 +475,4 @@ test('guessOver21 should draw the next card, game ends, player didnt win', () =>
     expect(game.isGameOver(game)).toEqual(true);
     expect(game.getTotal(game)).toEqual(19);
     expect(game.playerWon(game)).toEqual(false);
-});
+});*/
