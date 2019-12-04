@@ -1,7 +1,8 @@
 const deckConstructor = require('./deck.js');
 const dealerConstructor = require('./dealer.js');
 const lucky21Constructor = require('./lucky21.js');
-//const context = require('./context.js').newContext();
+
+// TODO: Add port from config.js to docker-compose
 
 // Initial state test.
 test('a new game should have 50 cards left in the deck', () => {
