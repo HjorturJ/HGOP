@@ -165,22 +165,28 @@ test('getCards should give us an array of strings with the length 2', () => {
     expect(cardsArray.length).toEqual(2);
     expect(cardsArray[0]).toEqual('07C');
 });
-/*
+
 // Card type and draw test
 test('getCards should return an array of string with length 3 after drawing once', () => {
     // Arrange
     const context = require('./context.js').newContext();
-    deck = [
+
+    let deck = [
         '10H', '04S', '08D', '07C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
+    
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
 
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guess21OrUnder(game);
     let cardsArray = game.getCards(game);
 
@@ -188,7 +194,7 @@ test('getCards should return an array of string with length 3 after drawing once
     expect(cardsArray.length).toEqual(3);
     expect(cardsArray[0]).toEqual('07C');
 });
-
+/*
 // Card object test
 test('getCardValue should be undefined at the start of the game', () => {
     // Arrange
