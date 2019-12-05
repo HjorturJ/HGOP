@@ -11,11 +11,8 @@ COPY package.json package.json
 # Except the dev dependencies due to the production flag
 RUN npm install --production
 
-# copies database.js into our containers /code workdir
-COPY database.js database.js
-
-# copies app.js into our containers /code workdir
-COPY app.js app.js
+# copies all .js files into our containers /code workdir
+COPY *.js ./
 
 # CMD is run as the last step when starting a container (start the appliaction inside the container).
 CMD node app.js
