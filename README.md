@@ -7,15 +7,15 @@
 ---
 
 This README contains information on Assignments 1 and 2 which were finished in the first 2 weeks in the course Introduction to quality management and testing. 
-
+<br>
 <details>
 <summary><b>Week 1</b></summary>
 
-#### API instance 
+### API instance 
 Here is a link to our API instace:
 http://54.86.210.109:3000/status
 
-#### Project status 
+### Project status 
 
 ```bash
 ├── assignments
@@ -44,10 +44,10 @@ http://54.86.210.109:3000/status
 <details open>
 <summary><b>Week 2</b></summary>
 
-#### Jenkins instance 
+### Jenkins instance 
 Here is a link to our Jenkins instance: 
 
-#### Project status 
+### Project status 
 
 ```bash
 ├── assignments
@@ -92,7 +92,8 @@ Here is a link to our Jenkins instance:
 
 ```
 </details>
-## Authors
+
+### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
 
 Hjörtur Jóhann Vignisson - hjorturv17@ru.is 
