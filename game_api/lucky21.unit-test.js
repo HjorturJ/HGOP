@@ -60,7 +60,7 @@ test('guessOver21 should draw the next card into our designated card slot', () =
     // Arrange
     const context = require('./context.js').newContext();
 
-    deck = [
+    let deck = [
         '10H', '09S', '01D', '05C'
     ];
 
@@ -87,7 +87,8 @@ test('guessOver21 should draw the next card into our designated card slot', () =
 test('getCardsValue should give us 15 total at the start of the game', () => {
     // Arrange
     const context = require('./context.js').newContext();
-    deck = [
+
+    let deck = [
         '10H', '04S', '05D', '13C'
     ];
 
@@ -113,8 +114,8 @@ test('getCardsValue should give us 15 total at the start of the game', () => {
 test('getCardsValue should give us 19 after one draw', () => {
     // Arrange
     const context = require('./context.js').newContext();
-    let deck = deckConstructor();
-    deck = [
+
+    let deck = [
         '10H', '04S', '05D', '13C'
     ];
 
@@ -141,8 +142,8 @@ test('getCardsValue should give us 19 after one draw', () => {
 test('getCards should give us an array of strings with the length 2', () => {
     // Arrange
     const context = require('./context.js').newContext();
-    let deck = deckConstructor();
-    deck = [
+
+    let deck = [
         '10H', '04S', '08D', '07C'
     ];
 
@@ -168,7 +169,7 @@ test('getCards should give us an array of strings with the length 2', () => {
 // Card type and draw test
 test('getCards should return an array of string with length 3 after drawing once', () => {
     // Arrange
-    let deck = deckConstructor();
+    const context = require('./context.js').newContext();
     deck = [
         '10H', '04S', '08D', '07C'
     ];
