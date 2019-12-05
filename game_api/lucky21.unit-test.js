@@ -1,7 +1,5 @@
 const dealerConstructor = require('./dealer.js');
 
-// TODO: Add port from config.js to docker-compose
-
 // Initial state test.
 test('a new game should have 50 cards left in the deck', () => {
     // Arrange
