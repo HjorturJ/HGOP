@@ -98,6 +98,7 @@ resource "aws_instance" "game_server" {
   provisioner "remote-exec" {
     inline = [
       "chmod +x /home/ubuntu/initialize_game_api_instance.sh",
+      "chmod +x /home/ubuntu/docker_compose_up.sh"
     ]
 
     connection {
@@ -107,22 +108,6 @@ resource "aws_instance" "game_server" {
       private_key = file("~/.aws/GameKeyPair.pem")
     }
   }
-
-  # Executing the chmod +x in our server on the local 
-  # initialize script to make it executable
-  provisioner "remote-exec" {
-    inline = [
-      "chmod +x /home/ubuntu/docker_compose_up.sh",
-    ]
-
-    connection {
-      host        = coalesce(self.public_ip, self.private_ip)
-      type        = "ssh"
-      user        = "ubuntu"
-      private_key = file("~/.aws/GameKeyPair.pem")
-    }
-  }
-}
 
 # Returning our server public ip from this script
 output "public_ip" {
