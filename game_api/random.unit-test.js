@@ -22,7 +22,7 @@ test('random should return an int that is less than or equal to the max value pa
     expect(number).toBeLessThanOrEqual(5);
 });
 
-// Random value min test
+// Random override test
 test('random should return a value of 1 after overriding the randomInt() fucntion', () => {
     // Arrange
     let random = require('./random')();
