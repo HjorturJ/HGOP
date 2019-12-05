@@ -26,7 +26,7 @@
         "eol-last": ["error", "never"],
         "prefer-const": 0,
         "object-curly-spacing": 0,
-        "max-len": ["error", { "code": 164 }],
+        "max-len": ["error", { "code": 256 }],
         "comma-dangle": 0,
         "require-jsdoc": 0,
         "keyword-spacing": 0,
