@@ -1,7 +1,4 @@
-const deckConstructor = require('./deck.js');
 const dealerConstructor = require('./dealer.js');
-const lucky21Constructor = require('./lucky21.js');
-const randomConstructor = require('./random');
 
 // TODO: Add port from config.js to docker-compose
 
@@ -226,7 +223,7 @@ test('getCardValue should be undefined at the start of the game', () => {
 test('getCardValue should be 9 after the first guess being over 21', () => {
     // Arrange
     const context = require('./context.js').newContext();
-    
+
     let deck = [
         '10H', '09S', '01D', '05C'
     ];
