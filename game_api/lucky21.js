@@ -1,11 +1,10 @@
-// We are exporitng game which has set deck and dealer (injected)
 module.exports = (context) => {
     let deckConstructor = context('deck');
     let deck = deckConstructor(context);
-    
+
     let dealerConstructor = context('dealer');
     let dealer = dealerConstructor(context);
-    
+
     dealer.shuffle(deck);
     let card0 = dealer.draw(deck);
     let card1 = dealer.draw(deck);

@@ -1,11 +1,13 @@
-const express = require("express");
-const database = require("./database.js");
-const lucky21 = require("./lucky21.js");
+const express = require('express');
+const database = require('./database.js');
+const lucky21 = require('./lucky21.js');
 const { Client } = require('pg');
 const deck = require('./deck.js');
 const dealer = require('./dealer.js');
 const server = require('./server.js');
 const inject = require('./inject.js');
+const random = require('./random.js');
+const config = require('./config.js');
 
 module.exports = {
     newContext: () => {
@@ -17,6 +19,8 @@ module.exports = {
             'deck': deck,
             'dealer': dealer,
             'server': server,
+            'random': random,
+            'config': config
         });
     },
 };
