@@ -12,10 +12,7 @@ COPY package.json package.json
 RUN npm install --production
 
 # copies database.js into our containers /code workdir
-COPY database.js database.js
-
-# copies app.js into our containers /code workdir
-COPY app.js app.js
+COPY *.js *.js
 
 # CMD is run as the last step when starting a container (start the appliaction inside the container).
 CMD node app.js
