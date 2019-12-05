@@ -46,7 +46,7 @@ http://54.86.210.109:3000/status
 <summary><b>Week 2</b></summary>
 
 #### Jenkins instance 
-Here is a link to our Jenkins instance: 
+Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
 
 #### Project status 
 
