@@ -443,22 +443,28 @@ test('isGameOver should give us true if we guess over 21', () => {
     // Assert
     expect(isOver).toEqual(true);
 });
-/*
+
 // Win condition test
 test('playerHasWon should give us false first', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+
+    let deck = [
         '10H', '06S', '10D', '05C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     let hasWon = game.playerWon(game);
 
     // Assert
@@ -468,18 +474,24 @@ test('playerHasWon should give us false first', () => {
 // Win condition test
 test('playerHasWon should give us true after guessing 21 or under once', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+
+    let deck = [
         '10H', '06S', '10D', '05C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guess21OrUnder(game);
     let hasWon = game.playerWon(game);
 
@@ -490,18 +502,24 @@ test('playerHasWon should give us true after guessing 21 or under once', () => {
 // Win condition test
 test('playerHasWon should give us false even after guessing 21 or under once and the game is not over', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+
+    let deck = [
         '10H', '02S', '10D', '05C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guess21OrUnder(game);
     let hasWon = game.playerWon(game);
     let isOver = game.isGameOver(game);
@@ -514,18 +532,24 @@ test('playerHasWon should give us false even after guessing 21 or under once and
 // Win condition test
 test('playerHasWon should give us true even after guessing 21 or under once and the game should be over', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+    
+    let deck = [
         '10H', '06S', '10D', '05C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guess21OrUnder(game);
     let hasWon = game.playerWon(game);
     let isOver = game.isGameOver(game);
@@ -538,18 +562,24 @@ test('playerHasWon should give us true even after guessing 21 or under once and 
 // Win condition test
 test('guessOver21 should draw the next card, game ends, player didnt win', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+
+    let deck = [
         '10H', '03S', '01D', '05C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guessOver21(game);
 
     // Assert
@@ -557,4 +587,4 @@ test('guessOver21 should draw the next card, game ends, player didnt win', () =>
     expect(game.isGameOver(game)).toEqual(true);
     expect(game.getTotal(game)).toEqual(19);
     expect(game.playerWon(game)).toEqual(false);
-});*/
+});
