@@ -97,8 +97,7 @@ resource "aws_instance" "game_server" {
   # initialize script to make it executable
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /home/ubuntu/initialize_game_api_instance.sh",
-      "chmod +x /home/ubuntu/docker_compose_up.sh"
+      "chmod +x /home/ubuntu/initialize_game_api_instance.sh"
     ]
 
     connection {
@@ -113,7 +112,7 @@ resource "aws_instance" "game_server" {
   # initialize script to make it executable
   provisioner "remote-exec" {
     inline = [
-      "chmod +x /home/ubuntu/docker_compose_up.sh",
+      "chmod +x /home/ubuntu/docker_compose_up.sh"
     ]
 
     connection {
