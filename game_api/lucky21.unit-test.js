@@ -393,7 +393,7 @@ test('isGameOver should give us true if we keep guessing 21 or under', () => {
     // Arrange
     const context = require('./context.js').newContext();
 
-    deck = [
+    let deck = [
         '10H', '08S', '08D', '05C'
     ];
 
@@ -415,29 +415,35 @@ test('isGameOver should give us true if we keep guessing 21 or under', () => {
     // Assert
     expect(isOver).toEqual(true);
 });
-/*
+
 // Game state test
 test('isGameOver should give us true if we guess over 21', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+
+    let deck = [
         '10H', '08S', '10D', '10C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     game.guessOver21(game);
     let isOver = game.isGameOver(game);
 
     // Assert
     expect(isOver).toEqual(true);
 });
-
+/*
 // Win condition test
 test('playerHasWon should give us false first', () => {
     // Arrange
