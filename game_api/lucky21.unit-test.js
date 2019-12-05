@@ -6,9 +6,10 @@ const lucky21Constructor = require('./lucky21.js');
 // Initial state test.
 test('a new game should have 50 cards left in the deck', () => {
     // Arrange
-    //let deckConstructor = context('deck');
-    //let dealerConstructor = context('dealer');
-    //let lucky21Constructor = context('lucky21');
+    const context = require('./context.js').newContext();
+    let deckConstructor = context('deck');
+    let dealerConstructor = context('dealer');
+    let lucky21Constructor = context('lucky21');
     
     let deck = deckConstructor();
     let dealer = dealerConstructor();
