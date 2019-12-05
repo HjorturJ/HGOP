@@ -305,28 +305,34 @@ test('getTotal should give us 20 in total after the first draw', () => {
     // Assert
     expect(totalValue).toEqual(21);
 });
-/*
+
 // Card object value test
 test('getCard should give us undefined at the start of the game', () => {
     // Arrange
-    let deck = deckConstructor();
-    deck = [
+    const context = require('./context.js').newContext();
+    
+    let deck = [
         '10H', '08S', '08D', '05C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     let card = game.getCard(game);
 
     // Assert
     expect(card).toEqual(undefined);
 });
-
+/*
 // Card object value and type test
 test('getCard should give us the string 08S after guessing over 21 in the first draw', () => {
     // Arrange
