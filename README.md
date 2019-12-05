@@ -9,7 +9,7 @@
 This README contains information on Assignments 1 and 2 which were finished in the first 2 weeks in the course Introduction to quality management and testing. 
 
 <br>
-<br>
+
 <details>
 <summary><b>Week 1</b></summary>
 
@@ -42,7 +42,6 @@ http://54.86.210.109:3000/status
 
 ```
 </details>
-<br>
 <details open>
 <summary><b>Week 2</b></summary>
 
@@ -94,6 +93,8 @@ Here is a link to our Jenkins instance:
 
 ```
 </details>
+
+<br>
 
 #### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
