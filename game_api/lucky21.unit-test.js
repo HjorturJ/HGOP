@@ -59,7 +59,7 @@ test('guess21OrUnder should draw the next card', () => {
 test('guessOver21 should draw the next card into our designated card slot', () => {
     // Arrange
     const context = require('./context.js').newContext();
-   
+
     deck = [
         '10H', '09S', '01D', '05C'
     ];
@@ -82,28 +82,33 @@ test('guessOver21 should draw the next card into our designated card slot', () =
     expect(game.state.card).toEqual('09S');
 });
 
-/*
+
 // Card array test
 test('getCardsValue should give us 15 total at the start of the game', () => {
     // Arrange
-    let deck = deckConstructor();
+    const context = require('./context.js').newContext();
     deck = [
         '10H', '04S', '05D', '13C'
     ];
 
-    let dealer = dealerConstructor();
+    let dealer = dealerConstructor(context);
     // Override the shuffle to do nothing.
     dealer.shuffle = (deck) => {};
 
+    let dependencies = {
+        'deck': () => deck,
+        'dealer': () => dealer,
+    };
+
     // Act
     // Inject our dependencies.
-    let game = lucky21Constructor(deck, dealer);
+    let game = context('lucky21')((name) => dependencies[name]);
     let totalCardValue = game.getCardsValue(game);
 
     // Assert
     expect(totalCardValue).toEqual(15);
 });
-
+/*
 // Card draw and value test
 test('getCardsValue should give us 19 after one draw', () => {
     // Arrange
