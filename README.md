@@ -53,7 +53,6 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 
 [![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
 
-
 ```bash
 ├── assignments
 │   ├── day01
