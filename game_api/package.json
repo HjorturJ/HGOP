@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test:unit": "jest --testRegex *.unit-test.js --collectCoverage true",
+    "test:api": "jest --testRegex *.api-test.js --collectCoverage true",
     "eslint": "eslint . --ext .js"
   },
   "author": "HjorturJ-GudrunM",
