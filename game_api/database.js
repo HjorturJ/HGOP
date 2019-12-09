@@ -70,7 +70,7 @@ module.exports = function(context) {
                         if (err) {
                             onError(err);
                         } else {
-                            onSuccess(res.rows[0]);
+                            onSuccess(res.rows[0].count);
                         }
                         client.end();
                     });
