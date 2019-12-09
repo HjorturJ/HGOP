@@ -36,17 +36,17 @@ module.exports = function(context) {
                 }, (err) => {
                     console.log('Failed to get total number of 21, Error:' + JSON.stringify(err));
                     res.statusCode = 500;
-                    res.send();
+                    res.send(JSON.stringify(err));
                 });
             }, (err) => {
                 console.log('Failed to get total number of wins, Error:' + JSON.stringify(err));
                 res.statusCode = 500;
-                res.send();
+                res.send(JSON.stringify(err));
             });
         }, (err) => {
             console.log('Failed to get total number of games, Error:' + JSON.stringify(err));
             res.statusCode = 500;
-            res.send();
+            res.send(JSON.stringify(err));
         });
     });
 
