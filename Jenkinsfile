@@ -24,7 +24,6 @@ node {
         // Change current directory
         dir("game_api") {
             sh "npm run test:unit"
-            sh "npm run test:unit" 
             step([
                 $class: 'CloverPublisher',
                 cloverReportDir: 'coverage',
