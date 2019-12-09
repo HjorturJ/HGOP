@@ -57,9 +57,6 @@ module.exports = function(context) {
         },
         // Should call onSuccess with integer.
         getTotalNumberOfGames: (onSuccess, onError) => {
-            onSuccess(0);
-            // TODO week 3
-            /*
             let client = getClient();
             client.connect((err) => {
                 if (err) {
@@ -67,20 +64,20 @@ module.exports = function(context) {
                     client.end();
                 } else {
                     const query = {
-                        text: 'SELECT COUNT(*) FROM "GameResult";'
+                        rowMode: 'array',
+                        text: 'SELECT * FROM "GameResult";'
                     };
                     client.query(query, (err, res) => {
                         if (err) {
                             onError(err);
                         } else {
-                            onSuccess(res.rows[0].count);
+                            onSuccess(res.rowCount);
                         }
                         client.end();
                     });
                 }
             });
             return;
-            */
         },
         // Should call onSuccess with integer.
         getTotalNumberOfWins: (onSuccess, onError) => {
