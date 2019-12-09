@@ -1,3 +1,7 @@
+variable "environment" {
+  type = string
+}
+
 # Configure the AWS Provider
 # The provider needs to be configured with the proper credentials before it can be used
 # Our credentials are stored in the credentials file
@@ -10,7 +14,7 @@ provider "aws" {
 # and allowing access to port 3000 from anywhere 
 # when using a TCP connection
 resource "aws_security_group" "game_security_group" {
-  name = "GameSecurityGroup"
+  name = "GameSecurityGroup_${var.environment}"
 
   ingress {
     from_port   = 22
@@ -42,7 +46,7 @@ resource "aws_instance" "game_server" {
   key_name               = "GameKeyPair"
   vpc_security_group_ids = [aws_security_group.game_security_group.id]
   tags = {
-    Name = "GameServer"
+    Name = "GameServer_${var.environment}"
   }
 
   # Copying initialize script into our server through ssh
