@@ -76,6 +76,7 @@ module.exports = function(context) {
                     });
                 }
             });
+            return;
         },
         // Should call onSuccess with integer.
         getTotalNumberOfWins: (onSuccess, onError) => {
