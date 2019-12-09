@@ -104,7 +104,6 @@ module.exports = function(context) {
         // Should call onSuccess with integer.
         getTotalNumberOf21: (onSuccess, onError) => {
             onSuccess(0);
-           
         },
     };
 };
