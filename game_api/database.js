@@ -70,7 +70,7 @@ module.exports = function(context) {
                         if (err) {
                             onError(err);
                         } else {
-                            onSuccess(res.rows[0].count);
+                            onSuccess(parseInt(res.rows[0].count));
                         }
                         client.end();
                     });
@@ -93,7 +93,7 @@ module.exports = function(context) {
                         if (err) {
                             onError(err);
                         } else {
-                            onSuccess(res.rows[0].count);
+                            onSuccess(parseInt(res.rows[0].count));
                         }
                         client.end();
                     });
@@ -103,7 +103,26 @@ module.exports = function(context) {
         },
         // Should call onSuccess with integer.
         getTotalNumberOf21: (onSuccess, onError) => {
-            onSuccess(0);
+            let client = getClient();
+            client.connect((err) => {
+                if (err) {
+                    onError(err);
+                    client.end();
+                } else {
+                    const query = {
+                        text: 'SELECT COUNT(*) FROM GameResult WHERE Score = 21;'
+                    };
+                    client.query(query, (err, res) => {
+                        if (err) {
+                            onError(err);
+                        } else {
+                            onSuccess(parseInt(res.rows[0].count));
+                        }
+                        client.end();
+                    });
+                }
+            });
+            return;
         },
     };
 };
