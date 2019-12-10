@@ -1,7 +1,5 @@
 #!/bin/bash
 
-GIT_COMMIT=$1
-
 API_IP=$(cd /var/lib/jenkins/terraform/hgop/apitest && terraform output public_ip)
 
 echo $API_IP
