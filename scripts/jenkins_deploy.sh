@@ -25,6 +25,7 @@ rm -f /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"/*.tf
 cp *.tf /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"/
 
 cd /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"
+echo $PWD
 terraform init # In case terraform is not initialized.
 terraform destroy -auto-approve -var environment="${CURR_ENV}" || exit 1
 terraform apply -auto-approve -var environment="${CURR_ENV}" || exit 1
