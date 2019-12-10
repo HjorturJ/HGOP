@@ -45,7 +45,6 @@ node {
 
         dir("game_api") {
             sh "./../scripts/api_test.sh ${git.GIT_COMMIT}"
-            sh "API_URL=${API_URL}:3000 npm run test:api"
         }
 
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
