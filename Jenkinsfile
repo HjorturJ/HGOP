@@ -41,20 +41,15 @@ node {
     }
 
     stage("API Test") {
-        /*
-        sh "eval \$(./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest)"
-        sh "echo ${PUBLIC_ADDR}"
-        // Change current directory
-        
-        
+        sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
+
         dir("game_api") {
-            sh "API_URL=${PUBLIC_ADDR}:3000 npm run test:api"
+            sh "./../scripts/api_test.sh ${git.GIT_COMMIT}"
+            sh "API_URL=${API_URL}:3000 npm run test:api"
         }
-        */
-        sh "./scripts/api_test.sh ${git.GIT_COMMIT}"
 
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
-            sh "terraform destroy -auto-approve"
+            sh "terraform destroy -auto-approve -var environment=apitest || exit 1"
         }
     }
 
