@@ -4,4 +4,6 @@ API_IP=$(cd /var/lib/jenkins/terraform/hgop/capacitytest && terraform output pub
 
 echo $API_IP
 
+sleep 15
+
 API_URL=http://${API_IP}:3000 npm run test:capacity
