@@ -42,7 +42,7 @@ node {
 
     stage("API Test") {
         PUBLIC_ADDR=sh(
-            script: sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest",
+            script: "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest",
             returnStdout: true
         ).trim()
         sh "echo $PUBLIC_ADDR"
