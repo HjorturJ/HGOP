@@ -43,6 +43,7 @@ node {
     stage("API Test") {
         sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
 
+        // Change current directory
         dir("game_api") {
             sh "./../scripts/api_test.sh ${git.GIT_COMMIT}"
         }
@@ -55,6 +56,7 @@ node {
     stage("Capacity Test") {
         sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} capacitytest"
 
+        // Change current directory
         dir("game_api") {
             sh "./../scripts/capacity_test.sh ${git.GIT_COMMIT}"
         }
