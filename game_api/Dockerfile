@@ -16,9 +16,9 @@ COPY *.js ./
 
 COPY database.json database.json
 
-COPY migrations/*.js migrations/*.js
+COPY migrations/*.js migrations/
 
-COPY migrations/*.js migrations/*.js
+COPY migrations/*.js migrations/
 
 # Give postgres time to setup before we try to migrate.
 CMD sleep 5 && npm run migratedb:pg && node app.js
