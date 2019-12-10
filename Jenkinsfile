@@ -41,11 +41,7 @@ node {
     }
 
     stage("API Test") {
-        sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
-        PUBLIC_ADDR=sh(
-            script: "\$(terraform output public_ip)",
-            returnStdout: true
-        ).trim()
+        sh "eval $(./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest)"
         sh "echo ${PUBLIC_ADDR}"
         // Change current directory
         dir("game_api") {
