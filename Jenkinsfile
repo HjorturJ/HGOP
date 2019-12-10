@@ -39,10 +39,11 @@ node {
         sh "./scripts/docker_build.sh ${git.GIT_COMMIT}"
         sh "./scripts/docker_push.sh ${git.GIT_COMMIT}"
     }
-/*
+
     stage("API Test") {
+        sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
         PUBLIC_ADDR=sh(
-            script: "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest",
+            script: "\$(terraform output public_ip)",
             returnStdout: true
         )
         sh "echo ${PUBLIC_ADDR}"
@@ -55,7 +56,7 @@ node {
             sh "terraform destroy -auto-approve"
         }
     }
-*/
+
     stage("Deploy") {
         sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} production"
     }
