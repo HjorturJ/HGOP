@@ -41,10 +41,14 @@ node {
     }
 
     stage("API Test") {
-        sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
+        PUBLIC_ADDR=sh(
+            script: "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest",
+            returnStdout: true
+        )
+        sh "echo ${PUBLIC_ADDR}"
         // Change current directory
         dir("game_api") {
-            sh "npm run test:api"
+            sh "${PUBLIC_ADDR}:3000 npm run test:api"
         }
 
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
