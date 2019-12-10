@@ -39,19 +39,20 @@ node {
         sh "./scripts/docker_build.sh ${git.GIT_COMMIT}"
         sh "./scripts/docker_push.sh ${git.GIT_COMMIT}"
     }
-/*
+
     stage("API Test") {
         sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
+        PUBLIC_ADDR=$(terraform output public_ip)
         // Change current directory
         dir("game_api") {
-            sh "npm run test:api"
+            sh "${PUBLIC_ADDR}:3000 npm run test:api"
         }
 
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
             sh "terraform destroy -auto-approve"
         }
     }
-*/
+
     stage("Deploy") {
         sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} production"
     }
