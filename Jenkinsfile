@@ -45,11 +45,11 @@ node {
         PUBLIC_ADDR=sh(
             script: "\$(terraform output public_ip)",
             returnStdout: true
-        )
+        ).trim()
         sh "echo ${PUBLIC_ADDR}"
         // Change current directory
         dir("game_api") {
-            sh "${PUBLIC_ADDR}:3000 npm run test:api"
+            sh "API_URL=${PUBLIC_ADDR}:3000 npm run test:api"
         }
 
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
