@@ -11,10 +11,9 @@ This Markdown Document contains our answers to the questions from the assignment
 
 # Questions 
 
-- **Explain why we put each consecutive call inside the onSuccess callback of the previous database call, instead of just placing them next to each other.**
-- Because these are asyncronus callback functions, that all rely on the same database, if the first one fails there is no reason to call the other ones beacuse they will also fail if there is something wrong with the database connection. If one onSuccess is called then we call the next function and if we get to the last one then we have all the data that we need and we send the response back. 
-- 
-
+- **Explain why we put each consecutive call inside the onSuccess callback of the previous database call, instead of just placing them next to each other.** Because these are asyncronus callback functions, that all rely on the same database, if the first one fails there is no reason to call the other ones beacuse they will also fail if there is something wrong with the database connection. If one onSuccess is called then we call the next function and if we get to the last one then we have all the data that we need and we send the response back. 
+- **What does the Done parameter do?**
+The Done parameter is a callback function which is called when the test has failed or completed successfully, and returns up the stack to indicate which event occured. 
 
 
 # Authors
