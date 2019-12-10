@@ -7,4 +7,4 @@ API_URL=$(cd /var/lib/jenkins/terraform/hgop/apitest && terraform output public_
 echo $PWD
 cd game_api
 echo $PWD
-sh API_URL=${API_URL}:3000 npm run test:api
+$("API_URL=${API_URL}:3000 npm run test:api")
