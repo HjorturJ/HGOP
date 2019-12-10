@@ -21,4 +21,4 @@ COPY migrations/*.js migrations/
 COPY migrations/*.js migrations/
 
 # Give postgres time to setup before we try to migrate.
-CMD npm run migratedb:pg && node app.js
+CMD sleep 10 && npm run migratedb:pg && node app.js
