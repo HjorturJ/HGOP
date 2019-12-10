@@ -7,3 +7,4 @@ set -e
 GIT_COMMIT=$1
 
 docker push hjorturj/hgop:$GIT_COMMIT
+docker push hjorturj/hgopclient:$GIT_COMMIT
