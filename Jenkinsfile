@@ -52,6 +52,19 @@ node {
         }
     }
 
+    stage("Capacity Test") {
+        sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} capacitytest"
+
+        dir("game_api") {
+            sh "./../scripts/capacity_test.sh ${git.GIT_COMMIT}"
+        }
+
+        dir("/var/lib/jenkins/terraform/hgop/capacitytest") {
+            sh "terraform destroy -auto-approve -var environment=capacitytest || exit 1"
+        }
+    }
+
+
     stage("Deploy") {
         sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} production"
     }
