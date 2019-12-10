@@ -48,11 +48,26 @@ module.exports = function(context) {
         if (game && game.isGameOver(game) == false) {
             res.statusCode = 409;
             res.send('There is already a game in progress');
-        } else {
+        }
+        else {
             game = lucky21Constructor(context);
             const msg = 'Game started';
-            res.statusCode = 201;
-            res.send(msg);
+            if (game.isGameOver(game)) {
+                const won = game.playerWon(game);
+                const score = game.getCardsValue(game);
+                const total = game.getTotal(game);
+                database.insertResult(won, score, total, () => {
+                    console.log('Game result inserted to database');
+                }, (err) => {
+                    console.log('Failed to insert game result, Error:' + JSON.stringify(err));
+                });
+                res.statusCode = 201;
+                res.send(game.getState(game));
+            }
+            else {
+                res.statusCode = 201;
+                res.send(msg);
+            }
         }
     });
 
@@ -61,7 +76,8 @@ module.exports = function(context) {
         if (game) {
             res.statusCode = 200;
             res.send(game.getState(game));
-        } else {
+        }
+        else {
             const msg = 'Game not started';
             res.statusCode = 204;
             res.send(msg);
@@ -75,7 +91,8 @@ module.exports = function(context) {
                 const msg = 'Game is already over';
                 res.statusCode = 403;
                 res.send(msg);
-            } else {
+            }
+            else {
                 game.guess21OrUnder(game);
                 if (game.isGameOver(game)) {
                     const won = game.playerWon(game);
@@ -90,7 +107,8 @@ module.exports = function(context) {
                 res.statusCode = 201;
                 res.send(game.getState(game));
             }
-        } else {
+        }
+        else {
             const msg = 'Game not started';
             res.statusCode = 204;
             res.send(msg);
@@ -104,7 +122,8 @@ module.exports = function(context) {
                 const msg = 'Game is already over';
                 res.statusCode = 403;
                 res.send(msg);
-            } else {
+            }
+            else {
                 game.guessOver21(game);
                 if (game.isGameOver(game)) {
                     const won = game.playerWon(game);
@@ -119,7 +138,8 @@ module.exports = function(context) {
                 res.statusCode = 201;
                 res.send(game.getState(game));
             }
-        } else {
+        }
+        else {
             const msg = 'Game not started';
             res.statusCode = 204;
             res.send(msg);
