@@ -5,6 +5,8 @@ module.exports = function(context) {
     const configConstructor = context('config');
     const config = configConstructor(context);
     const lucky21Constructor = context('lucky21');
+    const StatsD = require('hot-shots');
+    const client = new StatsD({ host: 'my_datadog_container', errorHandler: (error) => console.log('StatsD Error:', error) });
 
     let app = express();
 
@@ -55,6 +57,7 @@ module.exports = function(context) {
             res.send('There is already a game in progress');
         }
         else {
+            client.increment('games.started');
             game = lucky21Constructor(context);
             const msg = 'Game started';
             if (game.isGameOver(game)) {
