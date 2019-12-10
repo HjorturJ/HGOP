@@ -2,6 +2,7 @@
 
 #Get first argument of executable
 export GIT_COMMIT=$1
+PUB_URL=$2
 
 docker-compose down
-docker-compose up -d
+API_URL=$PUB_URL docker-compose up -d
