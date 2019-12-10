@@ -9,7 +9,7 @@ CURR_ENV=$2
 echo "${CURR_ENV}"
 
 # We need to move some files around, because of the terraform state limitations.
-mkdir -p /var/lib/jenkins/terraform/hgop/""${CURR_ENV}""
+mkdir -p /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"
 mkdir -p /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"/scripts
 rm -f /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"/scripts/initialize_game_api_instance.sh
 cp scripts/initialize_game_api_instance.sh /var/lib/jenkins/terraform/hgop/"${CURR_ENV}"/scripts/initialize_game_api_instance.sh
