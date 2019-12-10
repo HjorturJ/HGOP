@@ -14,5 +14,5 @@ RUN npm install --production
 # copies all .js files into our containers /code workdir
 COPY *.js ./
 
-# CMD is run as the last step when starting a container (start the appliaction inside the container).
-CMD node app.js
+# Give postgres time to setup before we try to migrate.
+CMD sleep 5 && npm run migratedb:pg && node app.js
