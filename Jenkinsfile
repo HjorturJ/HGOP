@@ -41,8 +41,9 @@ node {
     }
 
     stage("API Test") {
+        sh "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest"
         PUBLIC_ADDR=sh(
-            script: "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest",
+            script: "\$(terraform output public_ip)",
             returnStdout: true
         )
         sh "echo ${PUBLIC_ADDR}"
