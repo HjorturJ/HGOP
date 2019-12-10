@@ -45,7 +45,7 @@ node {
 
         // Change current directory
         dir("game_api") {
-            sh "./../scripts/api_test.sh ${git.GIT_COMMIT}"
+            sh "./../scripts/api_test.sh"
         }
 
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
@@ -58,7 +58,7 @@ node {
 
         // Change current directory
         dir("game_api") {
-            sh "./../scripts/capacity_test.sh ${git.GIT_COMMIT}"
+            sh "./../scripts/capacity_test.sh"
         }
 
         dir("/var/lib/jenkins/terraform/hgop/capacitytest") {
