@@ -44,8 +44,8 @@ node {
         PUBLIC_ADDR=sh(
             script: "./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest",
             returnStdout: true
-        ).trim()
-        sh "echo $PUBLIC_ADDR"
+        )
+        sh "echo ${PUBLIC_ADDR}"
         // Change current directory
         dir("game_api") {
             sh "${PUBLIC_ADDR}:3000 npm run test:api"
