@@ -41,7 +41,7 @@ node {
     }
 
     stage("API Test") {
-        sh "eval $(./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest)"
+        sh "eval \$(./scripts/jenkins_deploy.sh ${git.GIT_COMMIT} apitest)"
         sh "echo ${PUBLIC_ADDR}"
         // Change current directory
         dir("game_api") {
