@@ -13,7 +13,12 @@ RUN npm install --production
 
 # copies all .js files into our containers /code workdir
 COPY *.js ./
+
 COPY database.json database.json
+
+COPY migrations/20191210120722-GameResultTable.js migrations/20191210120722-GameResultTable.js
+
+COPY migrations/20191210134907-GameResultTableAddInsertDate.js migrations/20191210134907-GameResultTableAddInsertDate.js
 
 # Give postgres time to setup before we try to migrate.
 CMD sleep 5 && npm run migratedb:pg && node app.js
