@@ -35,6 +35,7 @@ services:
       DD_API_KEY: '7b100147f6d2886a2835af82be6f44bc'
       DD_SITE: 'datadoghq.eu'
       DD_DOGSTATSD_NON_LOCAL_TRAFFIC: 'true'
+      DD_TAGS: ${ENVIRONMENT}
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /proc/mounts:/host/proc/mounts:ro
