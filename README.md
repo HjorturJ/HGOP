@@ -136,12 +136,19 @@ Here is a link to our Jenkins instance: http://ec2-52-54-102-207.compute-1.amazo
 │   ├── server.js
 │   └── server.lib-test.js
 ├── game-client
+│   ├── cards
+│   ├── src
+│   │   ├── components
+│   │   │   └── AppContainer.js
+│   │   ├── App.css
 │   │   ├── App.js
+│   │   ├── index.css
+│   │   ├── index.html
 │   │   └── utils.js
 │   ├── Dockerfile
 │   ├── README.md
 │   ├── index.js
-│   └──package.json
+│   └── package.json
 ├── scripts
 │   ├── api_test.sh
 │   ├── capacity_test.sh
