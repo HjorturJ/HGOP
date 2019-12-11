@@ -6,7 +6,7 @@
 
 ---
 
-This README contains information on Assignments 1 and 2 which were finished in the first 2 weeks in the course Introduction to quality management and testing. 
+This README contains information on all 3 Assignments which were done steadily over a 3 week period the course Introduction to quality management and testing. 
 
 <br>
 
@@ -17,7 +17,7 @@ This README contains information on Assignments 1 and 2 which were finished in t
 Here is a link to our API instace:
 http://54.86.210.109:3000/status
 
-#### Project status 
+#### Project status (Week 1)
 
 ```bash
 ├── assignments
@@ -42,16 +42,10 @@ http://54.86.210.109:3000/status
 
 ```
 </details>
-<details open>
+<details>
 <summary><b>Week 2</b></summary>
 
-#### Jenkins instance 
-Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
-
-
-#### Project status 
-
-[![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
+#### Project status (Week 2)
 
 ```bash
 ├── assignments
@@ -97,9 +91,111 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 ```
 </details>
 
+<details open>
+<summary><b>Week 3</b></summary>
+
+### Jenkins instance 
+Here is a link to our Jenkins instance: http://ec2-52-54-102-207.compute-1.amazonaws.com:8080
+
+### Project status - Finished! :beers:
+
+[![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
+
+```bash
+├── assignments
+│   ├── day01
+│   │   └── answers.md
+│   └── day02
+│   │   └── answers.md
+│   └── day11
+│        └── answers.md
+├── game_api
+│   ├── migrations
+│   │   ├── **************-GameResultTable.js
+│   │   └── **************-GameResultTableAddInsertDate.js
+│   ├── .dockerignore
+│   ├── .eslintrc.json
+│   ├── Dockerfile
+│   ├── app.js
+│   ├── config.js
+│   ├── context.js
+│   ├── database.js
+│   ├── database.json
+│   ├── dealer.js
+│   ├── dealer.unit-test.js
+│   ├── deck.js
+│   ├── deck.unit-test.js
+│   ├── inject.js
+│   ├── lucky21.js
+│   ├── lucky21.unit-test.js
+│   ├── package.json
+│   ├── random.js
+│   ├── random.unit-test.js
+│   ├── server.api-test.js
+│   ├── server.capacity-test.js
+│   ├── server.js
+│   └── server.lib-test.js
+├── game-client
+│   ├── cards
+│   ├── src
+│   │   ├── components
+│   │   │   └── AppContainer.js
+│   │   ├── App.css
+│   │   ├── App.js
+│   │   ├── index.css
+│   │   ├── index.html
+│   │   └── utils.js
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── index.js
+│   └── package.json
+├── scripts
+│   ├── api_test.sh
+│   ├── capacity_test.sh
+│   ├── deploy.sh
+│   ├── docker_build.sh
+│   ├── docker_compose_up.sh
+│   ├── docker_push.sh
+│   ├── initialize_game_api_instance.sh
+│   ├── jenkins_deploy.sh
+│   ├── setup_local_dev_environment.sh
+│   ├── start_local.sh
+│   └── sync_session.sh
+├── .gitignore
+├── DataDogProductionDashboard.png
+├── Jenkinsfile
+├── README.md
+├── aboutus.md
+├── docker-compose.yml
+└── infrastructure.tf
+
+```
+</details>
 <br>
 
-#### Authors
+### DataDog Dashboard
+Here is a screenshot of our DataDog Dashboard.  
+
+![Dashboard Image](DataDogProductionDashboard.png)
+
+Our DataDog Dashboard shows **CPU usage**, **memory usage** and **number of games started**.
+
+In addition, we also decided to show **total win percentage**, **total wins and losses**, **wins and losses with exacly 21**, **times guessed under and over 21** and **total times stats have been requested**
+
+### Link to our DataDog Dashboard
+Here is a public url to our DataDog Dashboard: https://p.datadoghq.eu/sb/62prtcqqv23w99rq-b60897a066700db11571459c11f24bf5
+
+Note that Hrafn Orri was also invited to our team in DataDog.
+
+### Additional information
+We created a few extra scripts to the project that are not on the list of source files that is requested.  
+All of these scripts were made with permission/recommendation from either Fanney or Hrafn.
+
+We would also like to note that we participated in the security Hackathon and have been credited with 1 "gradeable" solution to a github issue.
+
+Thanks! :relaxed: 
+
+### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
 
 Hjörtur Jóhann Vignisson - hjorturv17@ru.is 
