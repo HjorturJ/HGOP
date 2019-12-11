@@ -32,7 +32,7 @@ services:
   my_datadog_container:
     image: datadog/agent:latest
     environment:
-      DD_API_KEY: 'cfa50e12f2a65e4668af673e1f6aaeda'
+      DD_API_KEY: '7b100147f6d2886a2835af82be6f44bc'
       DD_SITE: 'datadoghq.eu'
       DD_DOGSTATSD_NON_LOCAL_TRAFFIC: 'true'
     volumes:
