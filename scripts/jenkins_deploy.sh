@@ -28,9 +28,9 @@ terraform destroy -auto-approve -var environment="${CURR_ENV}" || exit 1
 terraform apply -auto-approve -var environment="${CURR_ENV}" || exit 1
 
 echo PUBLIC_ADDR=$(terraform output public_ip)
-#FULL_ADDR=http://${PUBLIC_ADDR}:3000
+FULL_ADDR="http://$(terraform output public_ip):3000"
 
 ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./initialize_game_api_instance.sh"
-ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./docker_compose_up.sh $GIT_COMMIT http://${PUBLIC_ADDR}:4000"
+ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./docker_compose_up.sh $GIT_COMMIT $FULL_ADDR $CURR_ENV"
 
 exit 0

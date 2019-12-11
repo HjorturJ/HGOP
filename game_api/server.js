@@ -27,6 +27,7 @@ module.exports = function(context) {
         database.getTotalNumberOfGames((totalNumberOfGames) => {
             database.getTotalNumberOfWins((totalNumberOfWins) => {
                 database.getTotalNumberOf21((totalNumberOf21) => {
+                    client.increment('stats.requested');
                     res.statusCode = 200;
                     res.send({
                         totalNumberOfGames: totalNumberOfGames,
@@ -64,6 +65,18 @@ module.exports = function(context) {
                 const won = game.playerWon(game);
                 const score = game.getCardsValue(game);
                 const total = game.getTotal(game);
+                if(won) {
+                    client.increment('currentTotal.wins');
+                    if(total == 21) {
+                        client.increment('currentTotal.winsWith21');
+                    }
+                }
+                else {
+                    client.increment('currentTotal.losses');
+                    if(total == 21) {
+                        client.increment('currentTotal.lossesWith21');
+                    }
+                }
                 database.insertResult(won, score, total, () => {
                     console.log('Game result inserted to database');
                 }, (err) => {
@@ -101,11 +114,24 @@ module.exports = function(context) {
                 res.send(msg);
             }
             else {
+                client.increment('underOr21.guessed');
                 game.guess21OrUnder(game);
                 if (game.isGameOver(game)) {
                     const won = game.playerWon(game);
                     const score = game.getCardsValue(game);
                     const total = game.getTotal(game);
+                    if(won) {
+                        client.increment('currentTotal.wins');
+                        if(total == 21) {
+                            client.increment('currentTotal.winsWith21');
+                        }
+                    }
+                    else {
+                        client.increment('currentTotal.losses');
+                        if(total == 21) {
+                            client.increment('currentTotal.lossesWith21');
+                        }
+                    }
                     database.insertResult(won, score, total, () => {
                         console.log('Game result inserted to database');
                     }, (err) => {
@@ -132,11 +158,24 @@ module.exports = function(context) {
                 res.send(msg);
             }
             else {
+                client.increment('over21.guessed');
                 game.guessOver21(game);
                 if (game.isGameOver(game)) {
                     const won = game.playerWon(game);
                     const score = game.getCardsValue(game);
                     const total = game.getTotal(game);
+                    if(won) {
+                        client.increment('currentTotal.wins');
+                        if(total == 21) {
+                            client.increment('currentTotal.winsWith21');
+                        }
+                    }
+                    else {
+                        client.increment('currentTotal.losses');
+                        if(total == 21) {
+                            client.increment('currentTotal.lossesWith21');
+                        }
+                    }
                     database.insertResult(won, score, total, () => {
                         console.log('Game result inserted to database');
                     }, (err) => {
