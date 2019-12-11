@@ -48,6 +48,7 @@ node {
             sh "./../scripts/api_test.sh"
         }
 
+        // Change current directory
         dir("/var/lib/jenkins/terraform/hgop/apitest") {
             sh "terraform destroy -auto-approve -var environment=apitest || exit 1"
         }
@@ -61,6 +62,7 @@ node {
             sh "./../scripts/capacity_test.sh"
         }
 
+        // Change current directory
         dir("/var/lib/jenkins/terraform/hgop/capacitytest") {
             sh "terraform destroy -auto-approve -var environment=capacitytest || exit 1"
         }
