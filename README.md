@@ -45,9 +45,6 @@ http://54.86.210.109:3000/status
 <details>
 <summary><b>Week 2</b></summary>
 
-#### Jenkins instance 
-Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
-
 #### Project status (Week 2)
 
 ```bash
@@ -97,8 +94,10 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 <details open>
 <summary><b>Week 3</b></summary>
 
+#### Jenkins instance 
+Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
 
-#### Project status (finished :beers:)
+#### Project status - Finished! :beers:
 
 [![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
 
@@ -145,7 +144,7 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 │   └──package.json
 ├── scripts
 │   ├── api_test.sh
-│    ├── capacity_test.sh
+│   ├── capacity_test.sh
 │   ├── deploy.sh
 │   ├── docker_build.sh
 │   ├── docker_compose_up.sh
@@ -165,6 +164,14 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 ```
 </details>
 <br>
+
+### DataDog
+Here is a screenshot of our DataDog Dashboard.  
+Our DataDog Dashboard shows **CPU usage**, **memory usage** and **number of games started**
+In addition, we also decided to show 
+
+
+Note that Hrafn Orri was invited to our team in DataDog.
 
 #### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
