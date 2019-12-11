@@ -95,7 +95,7 @@ http://54.86.210.109:3000/status
 <summary><b>Week 3</b></summary>
 
 ### Jenkins instance 
-Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
+Here is a link to our Jenkins instance: http://ec2-52-54-102-207.compute-1.amazonaws.com:8080
 
 ### Project status - Finished! :beers:
 
@@ -155,7 +155,7 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 │   ├── start_local.sh
 │   └── sync_session.sh
 ├── .gitignore
-├── DataDogDashboard.png
+├── DataDogProductionDashboard.png
 ├── Jenkinsfile
 ├── README.md
 ├── aboutus.md
@@ -168,16 +168,20 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 
 ### DataDog
 Here is a screenshot of our DataDog Dashboard.  
+
+![Dashboard Image](DataDogProductionDashboard.png)
+
 Our DataDog Dashboard shows **CPU usage**, **memory usage** and **number of games started**.
 
 In addition, we also decided to show **total win percentage**, **total wins and losses**, **wins and losses with exacly 21**, **times guessed under and over 21** and **total times stats have been requested**
-
-![Dashboard Image](DataDogProductionDashboard.png)
 
 Here is a public url to our DataDog Dashboard: https://p.datadoghq.eu/sb/62prtcqqv23w99rq-b60897a066700db11571459c11f24bf5
 
 Note that Hrafn Orri was also invited to our team in DataDog.
 
+#### Additional information
+We created a few extra scripts to the project that are not on the list of source files that is requested.  
+All of these scripts were made with permission/recommendation from either Fanney or Hrafn.
 
 #### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
