@@ -6,7 +6,7 @@
 
 ---
 
-This README contains information on Assignments 1 and 2 which were finished in the first 2 weeks in the course Introduction to quality management and testing. 
+This README contains information on all 3 Assignments which were done steadily over a 3 week period the course Introduction to quality management and testing. 
 
 <br>
 
@@ -190,6 +190,10 @@ Note that Hrafn Orri was also invited to our team in DataDog.
 ### Additional information
 We created a few extra scripts to the project that are not on the list of source files that is requested.  
 All of these scripts were made with permission/recommendation from either Fanney or Hrafn.
+
+We would also like to note that we participated in the security Hackathon and have been credited with 1 "gradeable" solution to a github issue.
+
+Thanks! :relaxed: 
 
 ### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
