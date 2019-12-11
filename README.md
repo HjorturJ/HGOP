@@ -94,10 +94,10 @@ http://54.86.210.109:3000/status
 <details open>
 <summary><b>Week 3</b></summary>
 
-#### Jenkins instance 
+### Jenkins instance 
 Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
 
-#### Project status - Finished! :beers:
+### Project status - Finished! :beers:
 
 [![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
 
@@ -155,6 +155,7 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 │   ├── start_local.sh
 │   └── sync_session.sh
 ├── .gitignore
+├── DataDogDashboard.png
 ├── Jenkinsfile
 ├── README.md
 ├── aboutus.md
@@ -167,11 +168,16 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 
 ### DataDog
 Here is a screenshot of our DataDog Dashboard.  
-Our DataDog Dashboard shows **CPU usage**, **memory usage** and **number of games started**
-In addition, we also decided to show 
+Our DataDog Dashboard shows **CPU usage**, **memory usage** and **number of games started**.
 
+In addition, we also decided to show **total win percentage**, **total wins and losses**, **wins and losses with exacly 21**, **times guessed under and over 21** and **total times stats have been requested**
 
-Note that Hrafn Orri was invited to our team in DataDog.
+![Dashboard Image](DataDogProductionDashboard.png)
+
+Here is a public url to our DataDog Dashboard: https://p.datadoghq.eu/sb/62prtcqqv23w99rq-b60897a066700db11571459c11f24bf5
+
+Note that Hrafn Orri was also invited to our team in DataDog.
+
 
 #### Authors
 Guðrún Margrét Ívansdóttir - gudruni17@ru.is
