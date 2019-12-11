@@ -17,7 +17,7 @@ This README contains information on Assignments 1 and 2 which were finished in t
 Here is a link to our API instace:
 http://54.86.210.109:3000/status
 
-#### Project status 
+#### Project status (Week 1)
 
 ```bash
 ├── assignments
@@ -47,6 +47,8 @@ http://54.86.210.109:3000/status
 
 #### Jenkins instance 
 Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
+
+#### Project status (Week 2)
 
 ```bash
 ├── assignments
@@ -96,7 +98,7 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 <summary><b>Week 3</b></summary>
 
 
-#### Project status 
+#### Project status (finished :beers:)
 
 [![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
 
