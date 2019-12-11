@@ -97,6 +97,81 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 ```
 </details>
 
+<details open>
+<summary><b>Week 2</b></summary>
+
+#### Jenkins instance 
+Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
+
+
+#### Project status 
+
+[![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
+
+```bash
+├── assignments
+│   ├── day01
+│   │   └── answers.md
+│   └── day02
+│   │   └── answers.md
+│   └── day11
+│        └── answers.md
+├── game_api
+│   ├── migrations
+│   │   ├── **************-GameResultTable.js
+│   │   └── **************-GameResultTableAddInsertDate.js
+│   ├── .dockerignore
+│   ├── .eslintrc.json
+│   ├── Dockerfile
+│   ├── app.js
+│   ├── config.js
+│   ├── context.js
+│   ├── database.js
+│   ├── database.json
+│   ├── dealer.js
+│   ├── dealer.unit-test.js
+│   ├── deck.js
+│   ├── deck.unit-test.js
+│   ├── inject.js
+│   ├── lucky21.js
+│   ├── lucky21.unit-test.js
+│   ├── package.json
+│   ├── random.js
+│   ├── random.unit-test.js
+│   ├── server.api-test.js
+│   ├── server.capacity-test.js
+│   ├── server.js
+│   └── server.lib-test.js
+├── game-client
+│   ├── cards
+│   ├── src
+│       ├── App.js
+│       └── utils.js
+│   ├── Dockerfile
+│   ├── README.md
+│   ├── index.js
+│   └──package.json
+├── scripts
+│   ├── api_test.sh
+│    ├── capacity_test.sh
+│   ├── deploy.sh
+│   ├── docker_build.sh
+│   ├── docker_compose_up.sh
+│   ├── docker_push.sh
+│   ├── initialize_game_api_instance.sh
+│   ├── jenkins_deploy.sh
+│   ├── setup_local_dev_environment.sh
+│   ├── start_local.sh
+│   └── sync_session.sh
+├── .gitignore
+├── Jenkinsfile
+├── README.md
+├── aboutus.md
+├── docker-compose.yml
+└── infrastructure.tf
+
+```
+</details>
 <br>
 
 #### Authors
