@@ -11,6 +11,9 @@ node {
         dir("game_api") {
             sh "npm install"
         }
+        dir("game_client") {
+            sh "npm install"
+        }
     }
 
     stage("Lint") {

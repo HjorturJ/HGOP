@@ -12,6 +12,9 @@ package-lock.json
 
 *.tfstate*
 
+.cache
+dist
+
 # Runtime data
 pids
 *.pid
