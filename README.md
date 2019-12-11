@@ -42,16 +42,11 @@ http://54.86.210.109:3000/status
 
 ```
 </details>
-<details open>
+<details>
 <summary><b>Week 2</b></summary>
 
 #### Jenkins instance 
 Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
-
-
-#### Project status 
-
-[![Build Status](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/buildStatus/icon?job=JenkinsHgop)](http://ec2-52-54-102-207.compute-1.amazonaws.com:8080/job/JenkinsHgop/)
 
 ```bash
 ├── assignments
@@ -98,10 +93,7 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 </details>
 
 <details open>
-<summary><b>Week 2</b></summary>
-
-#### Jenkins instance 
-Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.com:8080
+<summary><b>Week 3</b></summary>
 
 
 #### Project status 
@@ -143,10 +135,8 @@ Here is a link to our Jenkins instance: ec2-52-54-102-207.compute-1.amazonaws.co
 │   ├── server.js
 │   └── server.lib-test.js
 ├── game-client
-│   ├── cards
-│   ├── src
-│       ├── App.js
-│       └── utils.js
+│   │   ├── App.js
+│   │   └── utils.js
 │   ├── Dockerfile
 │   ├── README.md
 │   ├── index.js
