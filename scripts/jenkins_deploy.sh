@@ -31,6 +31,6 @@ echo PUBLIC_ADDR=$(terraform output public_ip)
 FULL_ADDR="http://$(terraform output public_ip):3000"
 
 ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./initialize_game_api_instance.sh"
-ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./docker_compose_up.sh $GIT_COMMIT $FULL_ADDR"
+ssh -o StrictHostKeyChecking=no -i "~/.aws/GameKeyPair.pem" ubuntu@$(terraform output public_ip) "./docker_compose_up.sh $GIT_COMMIT $FULL_ADDR $CURR_ENV"
 
 exit 0
