@@ -7,6 +7,7 @@ services:
     depends_on:
     - my_database_container
     environment:
+      ENVIRONMENT: ${ENVIRONMENT}
       PORT: 3000
       POSTGRES_HOST: 'my_database_container'
       POSTGRES_DB: 'game_database'
@@ -31,7 +32,7 @@ services:
   my_datadog_container:
     image: datadog/agent:latest
     environment:
-      DD_API_KEY: '7269a06aca27af3027bc63400752b69c'
+      DD_API_KEY: 'cfa50e12f2a65e4668af673e1f6aaeda'
       DD_SITE: 'datadoghq.eu'
       DD_DOGSTATSD_NON_LOCAL_TRAFFIC: 'true'
     volumes:
